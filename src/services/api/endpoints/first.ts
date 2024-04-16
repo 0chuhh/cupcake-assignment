@@ -1,8 +1,10 @@
+import { IRates } from 'models/rates';
 import axios from 'services/api/axios'
+import { EndpointType } from 'types/endpoint';
 
-const endpoints = {
-    first: () => axios.get('first/'),
-    poll: () => axios.get('first/poll/'),
+const endpoints:{[key:string]:EndpointType<IRates>} = {
+    first: () => axios.get<IRates>('first/'),
+    poll: () => axios.get<IRates>('first/poll/'),
     
 }
 export default endpoints
