@@ -6,7 +6,19 @@ import * as path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
-
+  server: {
+    host: '0.0.0.0',
+    port: 5173,
+    proxy:{
+      '/api':{
+        target: 'http://localhost:3000/api/v1/',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      }
+    }
+  },
+  base: "/",
+  build: { chunkSizeWarningLimit: 1600, },
   resolve: {
     alias:{
       app: `${path.resolve(__dirname, "./src/app/")}`,
