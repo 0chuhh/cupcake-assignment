@@ -18,7 +18,15 @@ export default defineConfig({
       layout: `${path.resolve(__dirname, "./src/components/layout/")}`,
       ui: `${path.resolve(__dirname, "./src/components/ui/")}`,
       public: `${path.resolve(__dirname, "./public/")}`,
-      pages: path.resolve(__dirname, "./src/pages"),
+      pages: path.resolve(__dirname, "./src/pages/"),
     }
-  }
+  },
+
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import "./src/app/styles/_index.scss";`
+      }
+    }
+  },
 })
