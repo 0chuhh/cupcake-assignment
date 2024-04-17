@@ -1,4 +1,4 @@
-import React, {FC, HTMLAttributes} from 'react'
+import {FC, HTMLAttributes} from 'react'
 import styles from './styles.module.scss';
 
 export interface IPageContainerProps extends HTMLAttributes<HTMLDivElement> {}
