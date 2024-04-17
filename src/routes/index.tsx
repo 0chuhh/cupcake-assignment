@@ -1,7 +1,6 @@
-import { lazy } from "react";
+import RatesPage from "pages/rates";
 import { Route, Routes } from "react-router-dom";
 
-const RatesPage = lazy(() => import("pages/rates"));
 
 export const Routing = () => {
 	return (
