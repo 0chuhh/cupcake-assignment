@@ -8,10 +8,11 @@ const delayPromise = (ms:number) => {
 
 export const poll = <T>(endpoint: EndpointType<T>, callback: (data: T) => void) => {
     function run() {
-        endpoint().then(({ data }) => {
-            console.log(data);
+        endpoint().then(({ data, status }) => {
             callback(data);
-            return delayPromise(1000).then(run);
+            if(status === 200){
+                return delayPromise(1000).then(run);
+            }
 
         }).catch(() => {
             return delayPromise(1000).then(run);
