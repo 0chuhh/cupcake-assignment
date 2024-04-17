@@ -1,9 +1,9 @@
 import { IRates } from 'models/rates';
-import axios from 'services/api/axios'
+import axios from 'services/api/axios';
 
 const endpoints = {
-    first: () => axios.get<IRates>('first/'),
-    poll: () => axios.get<IRates>('first/poll/'),
-    
-}
-export default endpoints
+    getLastRates: () => axios.get<IRates>('first/'),
+    pollRates: () => axios.get<IRates>('first/poll/'),
+
+};
+export default endpoints;
