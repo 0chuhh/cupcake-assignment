@@ -4,7 +4,7 @@ stack: React + TypeScript + Vite
 
 ## start app
 
-``js
+```js
 npm install
 ```
 
